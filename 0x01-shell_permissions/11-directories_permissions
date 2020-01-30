@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R ugo+x --ignore=-ld
+chmod -R ugo+x *
