@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1r /home
+cut -d: -f6 /etc/passwd
