@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+for i in range {1..9}
+do
+    echo "Holberton School"
+done
