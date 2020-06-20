@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 # A shell script to print each number of clock.
-for ((i=0;i<=12;i++))
+j=0
+while [ $j -le 12 ]
 do
-    echo "Hour: $i"
-    for ((j=1;j<=59;j++))
+    i=1
+    echo "Hour: $j"
+    while [ $i -le 59 ]
     do
-        echo $j
+        echo $i
+        ((i++))
     done
+    ((j++))
 done
