@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# try Kill Hightlander
+pkill -f 7-highlander
