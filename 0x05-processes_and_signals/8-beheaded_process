@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+# Cut highlander head
+kill -KILL "$(pgrep -f 7-highlander)"
