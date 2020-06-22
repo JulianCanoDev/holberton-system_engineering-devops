@@ -1,1 +1,4 @@
 #!/usr/bin/env bash
+# Comment
+# shellcheck disable=SC2059
+ps u -H -A | grep 'bash'
