@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-
+# Starting
+nc -l 98
