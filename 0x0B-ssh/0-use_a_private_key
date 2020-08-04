@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This is a commend
+# Another
+
+ssh -i ~/.ssh/holberton ubuntu@34.74.130.170
