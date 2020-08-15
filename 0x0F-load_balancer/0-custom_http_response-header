@@ -1,32 +1,13 @@
 #!/usr/bin/env bash
-# Custom hhtp response
-apt-get update -y && \
-apt-get install -y nginx && \
-echo -e \
-'http {
-    add_header X-Served-By $hostname;
-    root /var/www/holberton;
-    server {
-        listen 80;
-        server_name pearmountain.space;
-        error_page 404 /404_file_not_found.html;
-        rewrite ^/redirect_me/? https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-        location / {
-            index index.html;
-        }
-        location /404_file_not_found.html {
-            internal;
-        }
-    }
-}
-events {
-}' > /etc/nginx/nginx.conf
+# install ngix server
 
-mkdir -p /var/www/holberton
-
-echo "Holberton School" > \
-    /var/www/holberton/index.html
-echo "Ceci n'est pas une page" > \
-    /var/www/holberton/404_file_not_found.html
-
-service nginx restart
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server/a \\terror_page 404 /404.html;' /etc/nginx/sites-available/default
+sudo sed -i "/listen 80 default_server/a add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/default
+sudo service nginx reload
+sudo service nginx start
