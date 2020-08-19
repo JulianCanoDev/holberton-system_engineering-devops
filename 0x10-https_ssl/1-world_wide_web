@@ -12,7 +12,7 @@ then
                                               "to",$NF
                                              }'
 
-   done
+done
 else
     dig "$2.$1" | awk -v subd="$2" '/ANSWER SECTION:/ {
                                               getline; print "The subdomain",
