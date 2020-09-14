@@ -9,10 +9,10 @@ import csv
 
 if __name__ == "__main__":
 
-    id_user = int (sys.argv[1])
+    id_user = int(sys.argv[1])
 
     req_todos = requests.get(
-            'https://jsonplaceholder.typicode.com/todos').json()
+        'https://jsonplaceholder.typicode.com/todos').json()
     req_user = requests.get(
         'https://jsonplaceholder.typicode.com/users').json()
 
